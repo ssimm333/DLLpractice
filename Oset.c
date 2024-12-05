@@ -159,32 +159,6 @@ enum ReturnValue removeElement(OrderedSet* set, int elem) {
 
 OrderedSet* setIntersection(OrderedSet* set1, OrderedSet* set2) {
 
-	//OrderedSet* interset = createOrderedSet();
-	//dllNode* current1 = set1->head->next;
-	//dllNode* current2 = set2->head->next;
-
-	//int added;
-
-	//while (current1 != NULL && current2 != NULL) {
-	//	if (current1->d == current2->d) {
-	//		added = addElement(interset, current1->d);
-	//		
-	//		if (added == 0) {
-	//			printf("\nError");
-	//		}
-
-	//		current1 = current1->next;
-	//		current2 = current2->next;
-	//	}
-	//	else if (current1->d < current2->d) {
-	//		current1 = current1->next;
-	//	}
-	//	else {
-	//		current2 = current2->next;
-	//	}
-	//	return interset;
-	//}
-
 	OrderedSet* interset = createOrderedSet();
 
 	if (set1 == NULL && set2 == NULL) {
@@ -250,6 +224,16 @@ OrderedSet* setUnion(OrderedSet* set1, OrderedSet* set2) {
 // print all the elements in set1 that are not in set2
 OrderedSet* setDifference(OrderedSet* set1, OrderedSet* set2) {
 	OrderedSet* diffset = createOrderedSet();
+
+	if (set1 == NULL) {
+		diffset = NULL;
+		return diffset;
+	}
+
+	if (set2 == NULL) {
+		diffset = set1;
+		return diffset;
+	}
 
 	dllNode* current1 = set1->head;
 	while (current1 != NULL) {
