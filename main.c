@@ -62,10 +62,10 @@ int main() {
 				removeElement(setsArray[index], input);
 				printf("\nPlease enter element (enter value <0 to stop): Result:  ");
 				if (removeElement == NumberRemoved) {
-					printf("NUMBER REMOVED\n");
+					printf("NUMBER REMOVED");
 				}
 				else {
-					printf("NUMBER NOT IN SET\n");
+					printf("NUMBER NOT IN SET");
 				}
 			}
 			printf("\nFinal ordered set = ");
