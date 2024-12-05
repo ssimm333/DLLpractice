@@ -255,6 +255,15 @@ int main() {
 		case 5:
 			printf("\nEnter three indices i1, i2 and i3 to be used: ");
 			scanf_s("%d %d %d", &index1, &index2, &index3);
+			if (setsArray[index1] == NULL) {
+				printf("\nNo ordered set available at index %d. Cannot perform intersection.\n", index1);
+				break;
+			}
+			if (setsArray[index2] == NULL) {
+				printf("\nNo ordered set available at index %d. Cannot perform intersection.\n", index2);
+				break;
+			}
+
 			setsArray[index3] = setIntersection(setsArray[index1], setsArray[index2]);
 			printToStdout(setsArray[index3]);
 			break;
@@ -262,6 +271,14 @@ int main() {
 		case 6:
 			printf("\nEnter three indices i1, i2 and i3 to be used: ");
 			scanf_s("%d %d %d", &index1, &index2, &index3);
+			if (setsArray[index1] == NULL) {
+				printf("\nNo ordered set available at index %d. Cannot perform set Union.\n", index1);
+				break;
+			}
+			if (setsArray[index2] == NULL) {
+				printf("\nNo ordered set available at index %d. Cannot perform set Union.\n", index2);
+				break;
+			}
 			setsArray[index3] = setUnion(setsArray[index1], setsArray[index2]);
 			printToStdout(setsArray[index3]);
 			break;
@@ -269,6 +286,14 @@ int main() {
 		case 7:
 			printf("\nEnter three indices i1, i2 and i3 to be used: ");
 			scanf_s("%d %d %d", &index1, &index2, &index3);
+			if (setsArray[index1] == NULL) {
+				printf("\nNo ordered set available at index %d. Cannot perform set difference.\n", index1);
+				break;
+			}
+			if (setsArray[index2] == NULL) {
+				printf("\nNo ordered set available at index %d. Cannot perform set difference.\n", index2);
+				break;
+			}
 			setsArray[index3] = setDifference(setsArray[index1], setsArray[index2]);
 			printToStdout(setsArray[index3]);
 			break;

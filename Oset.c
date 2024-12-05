@@ -124,39 +124,6 @@ enum ReturnValue removeElement(OrderedSet* set, int elem) {
 	}
 }
 
-// print the common elements in each set, maintaining order
-//OrderedSet* setIntersection(OrderedSet* set1, OrderedSet* set2) {
-//	
-//	OrderedSet* interset = createOrderedSet();
-//
-//	if (set1->size == 0 || set2->size == 0) {
-//		return NULL;
-//	}
-//
-//	else {
-//		set1->current = set1->head->next;
-//		set2->current = set2->head->next;
-//
-//		while (set1->current != set1->tail) {
-//			while (set2->current != set2->tail) {
-//				if (set1->current->d == set2->current->d) {
-//					addElement(interset, set1->current->d);
-//				}
-//				else {
-//					set2->current = set2->current->next;
-//				}
-//			}
-//			set1->current = set1->current->next;
-//		}
-//	}
-//
-//	if (interset->size == 0) {
-//		return NULL;
-//	}
-//
-//	return interset;
-//}
-
 OrderedSet* setIntersection(OrderedSet* set1, OrderedSet* set2) {
 
 	OrderedSet* interset = createOrderedSet();
