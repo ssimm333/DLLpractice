@@ -30,3 +30,4 @@ void printToStdout(dllist* list);
 
 void printMenu();
 int test();
+void bubbleSort(OrderedSet* set, int size);

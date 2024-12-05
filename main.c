@@ -188,7 +188,7 @@ int main() {
 	//printf("\nSet Intersection: ");
 	//printToStdout(sets[3]);
 
-	//// 8								terminate program
+	//// 8									terminate program
 	////return 0;
 
 	printMenu();
@@ -226,12 +226,14 @@ int main() {
 			printf("\nEnter elements to add (negative number to stop): ");
 			while (scanf_s("%d", &input) && input >= 0) {
 				addElement(setsArray[index], input);
+
 				if (addElement == NumberAdded) {
+					
 					printf("NUMBER ADDED\n");
 				}
 				else {
 					printf("NUMBER ALREADY IN SET\n");
-				}
+				}		
 			}
 			printToStdout(setsArray[index]);
 			break;
@@ -249,6 +251,7 @@ int main() {
 					printf("NUMBER NOT IN SET\n");
 				}
 			}
+			
 			printToStdout(setsArray[index]);
 			break;
 
@@ -265,6 +268,7 @@ int main() {
 			}
 
 			setsArray[index3] = setIntersection(setsArray[index1], setsArray[index2]);
+			
 			printToStdout(setsArray[index3]);
 			break;
 
@@ -280,6 +284,7 @@ int main() {
 				break;
 			}
 			setsArray[index3] = setUnion(setsArray[index1], setsArray[index2]);
+			
 			printToStdout(setsArray[index3]);
 			break;
 
@@ -295,6 +300,7 @@ int main() {
 				break;
 			}
 			setsArray[index3] = setDifference(setsArray[index1], setsArray[index2]);
+			
 			printToStdout(setsArray[index3]);
 			break;
 
