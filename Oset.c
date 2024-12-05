@@ -61,69 +61,33 @@ void deleteOrderedSet(OrderedSet* set) {
 // insert new node and maintain ascending order and avoiding duplicates
 // insert new node and maintain ascending order and avoiding duplicates
 enum ReturnValue addElement(OrderedSet* set, data newdata) {
-	// check valid set exists
-	if (set == NULL) {
-		return AllocationError;
-	}
+    // check valid set exists
+    if (set == NULL) {
+        return AllocationError;
+    }
 
-	// check if the new data is already in the set
-	dllNode* current = set->head->next; // start from the first element
-	while (current != set->tail) {
+    // check if the new data is already in the set
+    dllNode* current = set->head->next; // start from the first element
+    while (current != set->tail) {
 		if (current->d == newdata) {
 			return NumberInSet;
 		}
-		current = current->next;
-	}
+        current = current->next;
+		
+    }
 
-	gotoHead(set);
+    gotoHead(set);
 
-	// find correct position for the node
-	while (set->current->next != set->tail && set->current->next->d < newdata) {
-		gotoNextNode(set);
-	}
+    // find correct position for the node
+    while (set->current->next != set->tail && set->current->next->d < newdata) {
+        gotoNextNode(set);
+    }
 
-	insertAfter(set, newdata);
-	set->size++;
-	return NumberAdded;
+    insertAfter(set, newdata);
+    set->size++;
+    return NumberAdded;
 }
 
-//enum ReturnValue addElement(OrderedSet* set, data newdata) {
-//// check valid set exists
-//	if (set == NULL) {
-//		return AllocationError;
-//	}
-//
-//	// check if the new data is already in the set
-//	dllNode* current = set->head;
-//	while (current != NULL) {
-//		if (current->d == newdata) {
-//			return NumberInSet;
-//		}
-//		current = current->next;
-//	}
-//
-//	gotoHead(set);
-//
-//	// find correct position for the node
-//	if (set->size == 0) {
-//		insertAfter(set, newdata);
-//		return NumberAdded;
-//	}
-//
-//	while (set->current->d > newdata) {
-//		gotoNextNode(set);
-//		if (set->current->d == newdata) {
-//			return NumberInSet;
-//		}
-//		else {
-//			if (set->current->next == NULL) {
-//				insertAfter(set, newdata);
-//				return NumberAdded;
-//				set->size++;
-//			}
-//		}
-//	}
-//}
 
 enum ReturnValue removeElement(OrderedSet* set, int elem) {
 	// check valid set exists
