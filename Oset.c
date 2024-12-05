@@ -187,6 +187,18 @@ OrderedSet* setIntersection(OrderedSet* set1, OrderedSet* set2) {
 
 	OrderedSet* interset = createOrderedSet();
 
+	if (set1 == NULL && set2 == NULL) {
+		return NULL;
+	}
+
+	else if (set1 == NULL) {
+		return set2;
+	}
+
+	else if (set2 == NULL) {
+		return set1;
+	}
+
 	dllNode* current1 = set1->head;
 	while (current1 != NULL) {
 		dllNode* current2 = set2->head;

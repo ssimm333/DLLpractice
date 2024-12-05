@@ -281,11 +281,6 @@ int main() {
 			printf("\nInvalid input\n");
 			break;
 		}
-
-		printf("\nPress Enter to continue\n");
-		while (getchar() != '\n');
-		getchar();
-
 	} while (1);
 
 	return EXIT_FAILURE;
